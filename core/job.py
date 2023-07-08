@@ -13,7 +13,7 @@ class Job:
         self.uptime = 0 # clocks for this task
 
     # increase task uptime (executing in cpu)
-    def increase(self):
+    def increase_uptime(self):
         if self.state != RUNNING:
             return -1
         else:
