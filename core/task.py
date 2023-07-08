@@ -1,10 +1,11 @@
 # Save task information here
+from job import Job
 
 # Task states
 READY = 0
 RUNNING = 1
 SUSPEND = 2 # RN I will assume that SUSPEND == BLOCK
-COMPLETE = 3 
+COMPLETED = 3 
 
 # TASK types
 PERIODIC  = -1
@@ -23,4 +24,11 @@ class Task:
 
     # an instance of a task
     def create_job(self):
-        pass
+        if self.state == COMPLETED:
+            return None # task is done - no more instance is allowed
+        elif self.type != PERIODIC and self.instance_num > 1:
+            return None # task is done once - no more instance is allowed
+        self.instance_num += 1
+        job = Job(self.name, self.state, self.type, self.act_time, self.deadline, self.instance_num, self.wcet)
+
+
