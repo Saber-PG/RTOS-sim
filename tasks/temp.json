@@ -1,0 +1,13 @@
+{
+    "tasks":[
+        {
+            "name":"",
+            "state": 0, 
+            "type": 0, 
+            "act_time": 0, 
+            "deadline": 0, 
+            "period": 0, 
+            "wcet": 0
+        }
+    ]
+}
