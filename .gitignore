@@ -6,6 +6,9 @@ todo.txt
 # ignore diagrams
 *.drawio
 
+# ignore task files
+tasks/
+
 # ignore these :
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode
