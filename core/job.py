@@ -7,7 +7,7 @@ class Job:
         self.state = state
         self.type = type
         self.act_time = act_time # clock time
-        self.Deadline = act_time + deadline # real deadline in clock
+        self.Deadline = act_time + deadline # absolute deadline in clock
         self.instance_num = instance_num # add one when one is created!
         self.wcet = wcet # worst case execution time 
         self.uptime = 0 # clocks for this task

@@ -7,9 +7,9 @@ from schedulers.Scheduler import Scheduler
 
 class RTOS:
     def __init__(self, taskSet: TaskSet, scheduler: Scheduler) -> None:
-        self.cpu_clock = 0
-        self.taskSet = taskSet
-        self.scheduler = scheduler
+        self.cpu_clock : int = 0
+        self.taskSet : TaskSet = taskSet
+        self.scheduler : Scheduler = scheduler
         self.executing_job : Job = None 
 
     # my RTOS runs - cpu is clocking

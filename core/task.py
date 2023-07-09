@@ -16,7 +16,7 @@ class Task:
         self.name = name
         self.state = state
         self.type = type
-        self.act_time = act_time # clock time
+        self.act_time = act_time # first clock time that our task first instance is created
         self.deadline = deadline # relative deadline
         self.period = period # clock time
         self.wcet = wcet # worst case execution time in clock time
