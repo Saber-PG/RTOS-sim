@@ -14,7 +14,18 @@ class Job:
 
     # increase task uptime (executing in cpu)
     def increase_uptime(self):
+        if self.wcet >= self.uptime:
+            self.state = COMPLETED
+            return -2 # task is done
         if self.state != RUNNING:
             return -1
         else:
             self.uptime += 1
+        if self.wcet == self.uptime:
+            self.state = COMPLETED
+        return 1
+
+    def is_done(self):
+        if self.state == COMPLETED:
+            return True
+        return False

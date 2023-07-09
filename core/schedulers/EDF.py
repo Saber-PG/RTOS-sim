@@ -9,7 +9,7 @@ class EDF(Scheduler):
         super().__init__()
 
     def schedule(self, taskset: TaskSet, cpu_time: int) -> Job:
-        taskset.update_jobs()
+        taskset.update_jobs(cpu_time, self.abort_on_miss)
         self.last_executing_job = None # we need to reset it here - not using this var in its real meaning purpose here
         # decide what task must be done right now!
         # we have to choose earliest absolute deadline first

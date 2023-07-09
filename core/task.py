@@ -30,5 +30,3 @@ class Task:
             return None # task is done once - no more instance is allowed
         self.instance_num += 1
         job = Job(self.name, self.state, self.type, self.act_time, self.deadline, self.instance_num, self.wcet)
-
-
