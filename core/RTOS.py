@@ -15,8 +15,9 @@ class RTOS:
     # my RTOS runs - cpu is clocking
     def run(self):
         while True:
+            # print("cpu clock: {}".format(self.cpu_clock))
             # decide what to do
-            self.executing_job = self.scheduler.schedule(self.taskSet)
+            self.executing_job: Job = self.scheduler.schedule(self.taskSet, self.cpu_clock)
             # we do something in one clock
             if self.executing_job != None:
                 self.executing_job.increase_uptime()

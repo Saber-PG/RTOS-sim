@@ -23,10 +23,11 @@ class Task:
         self.instance_num = 0 # add one when one is created!
 
     # an instance of a task
-    def create_job(self):
+    def create_job(self) -> Job:
         if self.state == COMPLETED:
             return None # task is done - no more instance is allowed
         elif self.type != PERIODIC and self.instance_num > 1:
             return None # task is done once - no more instance is allowed
         self.instance_num += 1
-        job = Job(self.name, self.state, self.type, self.act_time, self.deadline, self.instance_num, self.wcet)
+        job = Job(self.name, READY, self.type, self.act_time, self.deadline, self.instance_num, self.wcet)
+        return job

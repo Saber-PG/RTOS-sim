@@ -1,5 +1,14 @@
 # Instance of tasks
-from core.task import *
+
+# job states
+READY = 0
+RUNNING = 1
+SUSPEND = 2 # RN I will assume that SUSPEND == BLOCK
+COMPLETED = 3 
+
+# job types
+PERIODIC  = -1
+INTERRUPT = -2 # answer instantly (really important)
 
 class Job:
     def __init__(self, name: str, state: int, type: int, act_time: int, deadline: int, instance_num: int, wcet: int) -> None:
@@ -14,13 +23,12 @@ class Job:
 
     # increase task uptime (executing in cpu)
     def increase_uptime(self):
-        if self.wcet >= self.uptime:
+        if self.wcet <= self.uptime:
             self.state = COMPLETED
             return -2 # task is done
         if self.state != RUNNING:
             return -1
-        else:
-            self.uptime += 1
+        self.uptime += 1
         if self.wcet == self.uptime:
             self.state = COMPLETED
         return 1
