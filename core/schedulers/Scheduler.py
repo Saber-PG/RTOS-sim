@@ -1,7 +1,7 @@
 # Abstract class for my schedulers
 
-from taskset import TaskSet
-from job import Job
+from core.taskset import TaskSet
+from core.job import Job
 
 class Scheduler:
     def __init__(self) -> None:

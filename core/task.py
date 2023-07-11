@@ -1,5 +1,5 @@
 # Save task information here
-from job import Job
+from core.job import Job
 
 # Task states
 READY = 0

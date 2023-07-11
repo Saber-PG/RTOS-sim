@@ -1,8 +1,8 @@
 # implementing EDF here
 
-from taskset import TaskSet
-from job import Job
-from Scheduler import Scheduler
+from core.taskset import TaskSet
+from core.job import Job
+from core.schedulers.Scheduler import Scheduler
 
 class EDF(Scheduler):
     def __init__(self) -> None:

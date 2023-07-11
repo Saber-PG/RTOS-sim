@@ -1,5 +1,5 @@
 # Instance of tasks
-from task import *
+from core.task import *
 
 class Job:
     def __init__(self, name: str, state: int, type: int, act_time: int, deadline: int, instance_num: int, wcet: int) -> None:

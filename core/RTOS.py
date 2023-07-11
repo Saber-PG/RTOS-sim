@@ -1,9 +1,9 @@
 # Core of my RTOS code
 # we manage cpu here
 
-from taskset import TaskSet
-from job import Job
-from schedulers.Scheduler import Scheduler
+from core.taskset import TaskSet
+from core.job import Job
+from core.schedulers.Scheduler import Scheduler
 
 class RTOS:
     def __init__(self, taskSet: TaskSet, scheduler: Scheduler) -> None:

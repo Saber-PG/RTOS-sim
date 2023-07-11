@@ -1,6 +1,6 @@
 # Handles my task set information
 import json
-from task import Task
+from core.task import Task
 
 class TaskSet:
     def __init__(self) -> None:
