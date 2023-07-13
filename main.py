@@ -12,5 +12,5 @@ TASKSET = 'taskset1'
 edf = EDF()
 ts = TaskSet()
 ts.load_tasks_from_json(TASKSET)
-rtos = RTOS(ts, edf)
+rtos = RTOS(ts, edf, 150)
 rtos.run()

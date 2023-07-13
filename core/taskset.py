@@ -33,7 +33,7 @@ class TaskSet:
                 tasks = json_data['tasks']
                 for task in tasks:
                     new_task = Task(
-                        name=task['name'],
+                        name=task['name'].replace('-', ''),
                         state=task['state'],
                         type=task['type'],
                         act_time=task['act_time'],
@@ -42,7 +42,7 @@ class TaskSet:
                         wcet=task['wcet']
                     )
                     self.tasks.append(new_task)
-                    print('Loading task from {} is done!'.format('./tasks/' + name + '.json'))
+                print('Loading task from {} is done!'.format('./tasks/' + name + '.json'))
                 return 0 # success
         except:
             self.tasks = list()
